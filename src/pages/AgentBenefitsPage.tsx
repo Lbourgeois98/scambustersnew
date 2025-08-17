@@ -29,7 +29,7 @@ const AgentBenefitsPage: React.FC = () => {
             <span className="text-red-600"> Verified</span> Agents
           </h1>
           <p className="text-gray-300 max-w-3xl mx-auto text-sm md:text-lg px-4">
-            Unlock exclusive benefits, increase your revenue by up to 400%, and gain the trust 
+            Unlock exclusive benefits, increase your revenue by up to 98%, and gain the trust 
             of thousands of players worldwide. Join ScamBusters' verified agent program today.
           </p>
         </div>
@@ -62,7 +62,7 @@ const AgentBenefitsPage: React.FC = () => {
             </div>
             <h3 className="text-lg md:text-xl font-bold mb-2 text-white">Massive Revenue Boost</h3>
             <p className="text-gray-300 text-sm md:text-base mb-4">
-              Verified agents see an average 98% increase in player deposits and 300% more sign-ups 
+              Verified agents see an average 98% increase in player deposits and more sign-ups 
               within the first 30 days of verification.
             </p>
             <div className="text-green-400 text-sm font-medium">
@@ -88,10 +88,10 @@ const AgentBenefitsPage: React.FC = () => {
             <div className="bg-purple-500/20 p-3 rounded-full inline-block mb-4 border border-purple-500/30">
               <Megaphone className="h-6 w-6 md:h-8 md:w-8 text-purple-400" />
             </div>
-            <h3 className="text-lg md:text-xl font-bold mb-2 text-white">Free Marketing & Promotion</h3>
+            <h3 className="text-lg md:text-xl font-bold mb-2 text-white">Marketing & Promotion</h3>
             <p className="text-gray-300 text-sm md:text-base mb-4">
               Featured placement in our directory, social media promotion, and professional 
-              marketing materials
+              marketing
             </p>
             <div className="text-purple-400 text-sm font-medium">
               ✓ Directory listing ✓ Social media posts ✓ Verification Certificate
