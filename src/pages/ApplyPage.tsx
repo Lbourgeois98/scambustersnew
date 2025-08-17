@@ -23,17 +23,15 @@ const ApplyPage = () => {
               Join the <span className="text-yellow-400">Elite</span> Network of Verified Agents
             </h1>
             <p className="text-gray-300 text-sm md:text-base max-w-2xl mx-auto">
-              Boost your revenue by up to 400% and gain access to premium players. Start your application today.
+              Boost your revenue by up to 98% and gain access to premium players. Start your application today.
             </p>
           </div>
 
           {/* Benefits Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
             {[
-              { label: "Revenue Boost", value: "400%", color: "text-yellow-400" },
-              { label: "Players", value: "50K+", color: "text-red-400" },
+              { label: "Revenue Boost", value: "98%", color: "text-yellow-400" },
               { label: "Support", value: "24/7", color: "text-yellow-400" },
-              { label: "Marketing", value: "FREE", color: "text-red-400" },
             ].map((item, i) => (
               <div key={i} className="bg-gray-800 p-3 rounded-lg text-center border border-gray-700">
                 <div className={`text-xl font-bold mb-1 ${item.color}`}>{item.value}</div>
@@ -81,7 +79,7 @@ const ApplyPage = () => {
                   </svg>
                 </div>
                 <h4 className="font-medium text-white text-sm">2. Review</h4>
-                <p className="text-gray-400 text-xs mt-1">We respond in 24-48 hours</p>
+                <p className="text-gray-400 text-xs mt-1">We respond in 1-24 hours</p>
               </div>
               <div className="text-center">
                 <div className="bg-green-500 p-2 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-2">
