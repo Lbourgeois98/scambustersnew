@@ -37,11 +37,11 @@ const AgentBenefitsPage: React.FC = () => {
         {/* Key Statistics */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 mb-8 md:mb-16">
           <div className="dark-box p-3 md:p-6 rounded-lg text-center">
-            <div className="text-xl md:text-3xl font-bold text-gold-500 mb-1 md:mb-2">400%</div>
+            <div className="text-xl md:text-3xl font-bold text-gold-500 mb-1 md:mb-2">99%%</div>
             <div className="text-xs md:text-sm text-gray-300">Revenue Increase</div>
           </div>
           <div className="dark-box p-3 md:p-6 rounded-lg text-center">
-            <div className="text-xl md:text-3xl font-bold text-red-500 mb-1 md:mb-2">50K+</div>
+            <div className="text-xl md:text-3xl font-bold text-red-500 mb-1 md:mb-2">Loyal</div>
             <div className="text-xs md:text-sm text-gray-300">Active Players</div>
           </div>
           <div className="dark-box p-3 md:p-6 rounded-lg text-center">
@@ -62,7 +62,7 @@ const AgentBenefitsPage: React.FC = () => {
             </div>
             <h3 className="text-lg md:text-xl font-bold mb-2 text-white">Massive Revenue Boost</h3>
             <p className="text-gray-300 text-sm md:text-base mb-4">
-              Verified agents see an average 400% increase in player deposits and 300% more sign-ups 
+              Verified agents see an average 98% increase in player deposits and 300% more sign-ups 
               within the first 30 days of verification.
             </p>
             <div className="text-green-400 text-sm font-medium">
@@ -76,7 +76,7 @@ const AgentBenefitsPage: React.FC = () => {
             </div>
             <h3 className="text-lg md:text-xl font-bold mb-2 text-white">Exclusive Player Network</h3>
             <p className="text-gray-300 text-sm md:text-base mb-4">
-              Get access to our network of 50,000+ active players who specifically seek out 
+              Get access to our network of active players who specifically seek out 
               verified agents for their gaming needs.
             </p>
             <div className="text-blue-400 text-sm font-medium">
@@ -91,10 +91,10 @@ const AgentBenefitsPage: React.FC = () => {
             <h3 className="text-lg md:text-xl font-bold mb-2 text-white">Free Marketing & Promotion</h3>
             <p className="text-gray-300 text-sm md:text-base mb-4">
               Featured placement in our directory, social media promotion, and professional 
-              marketing materials - all included at no extra cost.
+              marketing materials
             </p>
             <div className="text-purple-400 text-sm font-medium">
-              ✓ Directory listing ✓ Social media posts ✓ Marketing badges
+              ✓ Directory listing ✓ Social media posts ✓ Verification Certificate
             </div>
           </div>
 
@@ -108,7 +108,7 @@ const AgentBenefitsPage: React.FC = () => {
               trustworthy and professional gaming operators.
             </p>
             <div className="text-gold-400 text-sm font-medium">
-              ✓ Verified badge ✓ Industry credibility ✓ Professional status
+              ✓ Verification Certificate ✓ Industry credibility ✓ Professional status
             </div>
           </div>
 
@@ -118,11 +118,11 @@ const AgentBenefitsPage: React.FC = () => {
             </div>
             <h3 className="text-lg md:text-xl font-bold mb-2 text-white">Global Exposure</h3>
             <p className="text-gray-300 text-sm md:text-base mb-4">
-              Reach players worldwide through our international network and gain credibility 
-              in global gaming communities.
+              Reach players through our highly connected network and gain credibility 
+              in multiple groups across the gaming communities.
             </p>
             <div className="text-red-400 text-sm font-medium">
-              ✓ International reach ✓ Global credibility ✓ Worldwide recognition
+              ✓ high network reach ✓ credibility ✓ recognition
             </div>
           </div>
 
@@ -136,75 +136,11 @@ const AgentBenefitsPage: React.FC = () => {
               dedicated account management for your business.
             </p>
             <div className="text-cyan-400 text-sm font-medium">
-              ✓ 24/7 support ✓ Dispute resolution ✓ Account manager
+              ✓ 24/7 support ✓ Dispute resolution ✓ Admin Assistance
             </div>
           </div>
         </div>
-
-        {/* Success Stories */}
-        <div className="mb-8 md:mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-center text-white">
-            Success Stories from <span className="text-gold-500">Verified Agents</span>
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-            <div className="dark-box-light p-4 md:p-6 rounded-lg">
-              <div className="flex items-center mb-3 md:mb-4">
-                <div className="bg-green-500 rounded-full h-10 w-10 md:h-12 md:w-12 flex items-center justify-center mr-3 md:mr-4">
-                  <Star className="h-5 w-5 md:h-6 md:w-6 text-white" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-white text-sm md:text-base">Lucky Ace Gaming</h4>
-                  <p className="text-gray-400 text-xs md:text-sm">Verified Agent</p>
-                </div>
-              </div>
-              <p className="text-gray-300 text-sm md:text-base mb-3 md:mb-4">
-                "After getting verified with ScamBusters, my player base grew by 250% in just 2 months. 
-                The trust factor is incredible!"
-              </p>
-              <div className="text-green-400 text-xs md:text-sm font-medium">
-                +250% Player Growth • +400% Revenue
-              </div>
-            </div>
-
-            <div className="dark-box-light p-4 md:p-6 rounded-lg">
-              <div className="flex items-center mb-3 md:mb-4">
-                <div className="bg-blue-500 rounded-full h-10 w-10 md:h-12 md:w-12 flex items-center justify-center mr-3 md:mr-4">
-                  <Star className="h-5 w-5 md:h-6 md:w-6 text-white" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-white text-sm md:text-base">Tiger Sweepstakes</h4>
-                  <p className="text-gray-400 text-xs md:text-sm">Verified Agent</p>
-                </div>
-              </div>
-              <p className="text-gray-300 text-sm md:text-base mb-3 md:mb-4">
-                "The verification badge alone increased my conversion rate by 300%. Players trust 
-                verified agents more than anyone else."
-              </p>
-              <div className="text-blue-400 text-xs md:text-sm font-medium">
-                +300% Conversion Rate • Premium Players
-              </div>
-            </div>
-
-            <div className="dark-box-light p-4 md:p-6 rounded-lg">
-              <div className="flex items-center mb-3 md:mb-4">
-                <div className="bg-purple-500 rounded-full h-10 w-10 md:h-12 md:w-12 flex items-center justify-center mr-3 md:mr-4">
-                  <Star className="h-5 w-5 md:h-6 md:w-6 text-white" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-white text-sm md:text-base">Mega Money</h4>
-                  <p className="text-gray-400 text-xs md:text-sm">Verified Agent</p>
-                </div>
-              </div>
-              <p className="text-gray-300 text-sm md:text-base mb-3 md:mb-4">
-                "ScamBusters verification opened doors to high-value players I never had access to before. 
-                My monthly revenue tripled!"
-              </p>
-              <div className="text-purple-400 text-xs md:text-sm font-medium">
-                +300% Monthly Revenue • VIP Access
-              </div>
-            </div>
-          </div>
-        </div>
+        
 
         {/* Exclusive Benefits List */}
         <div className="dark-box p-6 md:p-8 rounded-lg mb-8 md:mb-16">
@@ -218,7 +154,7 @@ const AgentBenefitsPage: React.FC = () => {
             </div>
             <div className="flex items-center text-gray-300 text-sm md:text-base">
               <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-green-400 mr-2 md:mr-3 flex-shrink-0" />
-              Monthly business review consultations
+              Daily access to promote
             </div>
             <div className="flex items-center text-gray-300 text-sm md:text-base">
               <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-green-400 mr-2 md:mr-3 flex-shrink-0" />
@@ -226,15 +162,15 @@ const AgentBenefitsPage: React.FC = () => {
             </div>
             <div className="flex items-center text-gray-300 text-sm md:text-base">
               <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-green-400 mr-2 md:mr-3 flex-shrink-0" />
-              Professional marketing materials & badges
+              Professional Verification Certificate
             </div>
             <div className="flex items-center text-gray-300 text-sm md:text-base">
               <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-green-400 mr-2 md:mr-3 flex-shrink-0" />
-              Industry insights and market reports
+              Industry insights and reports
             </div>
             <div className="flex items-center text-gray-300 text-sm md:text-base">
               <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-green-400 mr-2 md:mr-3 flex-shrink-0" />
-              Referral bonus program participation
+              Referrals from our loyal players
             </div>
             <div className="flex items-center text-gray-300 text-sm md:text-base">
               <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-green-400 mr-2 md:mr-3 flex-shrink-0" />
