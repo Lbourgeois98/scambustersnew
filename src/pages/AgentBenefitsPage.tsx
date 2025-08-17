@@ -37,7 +37,7 @@ const AgentBenefitsPage: React.FC = () => {
         {/* Key Statistics */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 mb-8 md:mb-16">
           <div className="dark-box p-3 md:p-6 rounded-lg text-center">
-            <div className="text-xl md:text-3xl font-bold text-gold-500 mb-1 md:mb-2">99%%</div>
+            <div className="text-xl md:text-3xl font-bold text-gold-500 mb-1 md:mb-2">98%</div>
             <div className="text-xs md:text-sm text-gray-300">Revenue Increase</div>
           </div>
           <div className="dark-box p-3 md:p-6 rounded-lg text-center">
