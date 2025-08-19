@@ -105,5 +105,12 @@ export const agents: Agent[] = [
     verificationId: 'SB-88888',
     status: 'verified',
     website: 'https://www.facebook.com/groups/619382011157848',
+  },
+   {
+    id: '20',
+    name: 'Den Den Gaming',
+    verificationId: 'SB-45678',
+    status: 'verified',
+    website: 'https://www.facebook.com/profile.php?id=61577076269596',
   }
 ];
