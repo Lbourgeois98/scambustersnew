@@ -2,13 +2,6 @@ import { Agent } from '../types';
 
 export const agents: Agent[] = [
   {
-    id: '1',
-    name: 'Lucky Ace',
-    verificationId: 'SB-12345',
-    status: 'verified',
-    website: 'https://www.facebook.com/acey.luck?mibextid=ZbWKwL',
-  },
-  {
     id: '2',
     name: 'Tiger Sweepstakes',
     verificationId: 'SB-23456',
