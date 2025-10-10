@@ -106,18 +106,4 @@ export const agents: Agent[] = [
     status: 'verified',
     website: 'https://www.facebook.com/groups/619382011157848',
   },
-   {
-    id: '20',
-    name: 'Den Den Gaming',
-    verificationId: 'SB-45678',
-    status: 'verified',
-    website: 'https://www.facebook.com/profile.php?id=61577076269596',
-  },
-  {
-    id: '21',
-    name: 'Lily Parker',
-    verificationId: 'SB-291738',
-    status: 'verified',
-    website: 'https://www.facebook.com/share/174PCk8XeX/?mibextid=wwXIfr',
-  },
 ];
