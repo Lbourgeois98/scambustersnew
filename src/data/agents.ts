@@ -99,4 +99,11 @@ export const agents: Agent[] = [
     status: 'verified',
     website: 'https://www.facebook.com/groups/619382011157848',
   },
+  {
+    id: '20',
+    name: 'William Gaming Hub',
+    verificationId: 'SB-251910',
+    status: 'verified',
+    website: 'https://www.facebook.com/share/17CsiNgdn5/?mibextid=wwXIfr',
+  },
 ];
