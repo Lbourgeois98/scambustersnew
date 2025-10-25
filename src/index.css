@@ -17,7 +17,7 @@
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background: #0a0a0a;
+    background: #1a0a0a;
     position: relative;
     overflow-x: hidden;
   }
@@ -31,7 +31,9 @@
     width: 100%;
     height: 100%;
     z-index: -10;
-    background: #0a0a0a;
+    background: radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(196, 30, 58, 0.1) 0%, transparent 50%),
+                #0a0a0a;
   }
 
   .video-background {
@@ -54,6 +56,7 @@
     height: auto;
     transform: translate(-50%, -50%);
     object-fit: cover;
+    filter: brightness(0.6) saturate(1.2);
   }
 
   .video-background::after {
@@ -63,7 +66,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.8) 100%);
+    background: linear-gradient(to bottom, 
+      rgba(10,0,0,0.4) 0%, 
+      rgba(20,5,5,0.5) 50%, 
+      rgba(10,0,0,0.6) 100%);
+    pointer-events: none;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -88,23 +95,22 @@
   .casino-overlay {
     position: relative;
     z-index: 1;
-    background: #0a0a0a;
     min-height: 100vh;
   }
 
-  /* Dark box styles */
+  /* Dark box styles - More transparent and visually appealing */
   .dark-box {
-    background: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    background: rgba(20, 5, 5, 0.75);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 8px 32px rgba(212, 175, 55, 0.15), 0 0 20px rgba(196, 30, 58, 0.1);
   }
 
   .dark-box-light {
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    background: rgba(30, 10, 10, 0.65);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    box-shadow: 0 4px 16px rgba(212, 175, 55, 0.1);
   }
 
   /* Mobile optimizations */
