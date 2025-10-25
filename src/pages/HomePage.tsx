@@ -11,11 +11,11 @@ const HomePage: React.FC = () => {
       <TrustIndicators />
       <VerificationProcess />
 
-      {/* Neon pulse animation styles */}
+      {/* Neon Glow Animation Styles */}
       <style>{`
         @keyframes neonPulseBlue {
           0%, 100% { box-shadow: 0 0 10px #3b82f6, 0 0 20px #3b82f6, 0 0 30px #60a5fa; }
-          50% { box-shadow: 0 0 20px #60a5fa, 0 0 40px #93c5fd; }
+          50% { box-shadow: 0 0 25px #60a5fa, 0 0 45px #93c5fd; }
         }
         @keyframes neonPulsePink {
           0%, 100% { box-shadow: 0 0 10px #ec4899, 0 0 20px #f472b6, 0 0 30px #f9a8d4; }
@@ -29,10 +29,15 @@ const HomePage: React.FC = () => {
           0%, 100% { box-shadow: 0 0 12px #facc15, 0 0 25px #f97316, 0 0 45px #ef4444; }
           50% { box-shadow: 0 0 25px #f97316, 0 0 55px #ef4444; }
         }
+        @keyframes neonPulseGold {
+          0%, 100% { box-shadow: 0 0 10px #facc15, 0 0 20px #facc15, 0 0 35px #fbbf24; }
+          50% { box-shadow: 0 0 25px #fbbf24, 0 0 45px #fde047; }
+        }
         .neon-blue { animation: neonPulseBlue 2s infinite alternate; }
         .neon-pink { animation: neonPulsePink 2s infinite alternate; }
         .neon-green { animation: neonPulseGreen 2s infinite alternate; }
         .neon-goldred { animation: neonPulseGoldRed 2s infinite alternate; }
+        .neon-gold { animation: neonPulseGold 2s infinite alternate; }
       `}</style>
 
       <div id="admin-contacts" className="py-8 md:py-16">
@@ -119,12 +124,12 @@ const HomePage: React.FC = () => {
                   Join our Facebook Group
                 </a>
 
-                {/* Messenger Group – Gold glow */}
+                {/* Messenger Group – Gold Glow */}
                 <a
                   href="https://m.me/j/Aba6iSHafKh901ZD/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-white px-4 py-3 md:px-6 md:py-4 rounded-lg transition-all text-sm md:text-base font-semibold shadow-lg shadow-gold-500/40"
+                  className="flex items-center justify-center bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-white px-4 py-3 md:px-6 md:py-4 rounded-lg transition-all text-sm md:text-base font-semibold neon-gold"
                 >
                   <MessagesSquare className="h-4 w-4 md:h-5 md:w-5 mr-1 md:mr-2" />
                   Join our Group Chat
