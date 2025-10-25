@@ -122,7 +122,7 @@ const HomePage: React.FC = () => {
               Ready to <span className="text-gold-500">Transform</span> Your Business?
             </h2>
             <p className="text-gray-300 mb-6 text-sm md:text-base">
-              Join hundreds of successful agents who boosted their revenue through ScamBusters verification.
+              Join other successful agents who boosted their revenue through ScamBusters verification.
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -138,7 +138,7 @@ const HomePage: React.FC = () => {
               {/* Verified Agents Button */}
               <Link
                 href="/agents"
-                className="bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-black px-8 py-4 rounded-lg transition-all transform hover:scale-105 border border-gold-400/40 flex items-center justify-center font-medium text-base shadow-lg shadow-gold-500/30 neon-gold"
+                className="bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-white px-8 py-4 rounded-lg transition-all transform hover:scale-105 border border-gold-400/40 flex items-center justify-center font-medium text-base shadow-lg shadow-gold-500/30 neon-gold"
               >
                 View Verified Agents
               </Link>
