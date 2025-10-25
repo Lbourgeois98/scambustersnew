@@ -30,7 +30,7 @@ const HomePage: React.FC = () => {
                     href="https://www.facebook.com/share/16tXMhVYMu/" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 md:px-4 rounded-lg transition-colors text-sm md:text-base"
+                    className="inline-flex items-center bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-black px-3 py-2 md:px-4 rounded-lg transition-all text-sm md:text-base font-semibold shadow-lg"
                   >
                     <Facebook className="h-4 w-4 md:h-5 md:w-5 mr-1 md:mr-2" />
                     Contact on Facebook
@@ -46,7 +46,7 @@ const HomePage: React.FC = () => {
                     href="https://www.facebook.com/PrettyBrittyyxo/" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center bg-pink-600 hover:bg-pink-700 text-white px-3 py-2 md:px-4 rounded-lg transition-colors text-sm md:text-base"
+                    className="inline-flex items-center bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-black px-3 py-2 md:px-4 rounded-lg transition-all text-sm md:text-base font-semibold shadow-lg"
                   >
                     <Facebook className="h-4 w-4 md:h-5 md:w-5 mr-1 md:mr-2" />
                     Contact on Facebook
@@ -62,7 +62,7 @@ const HomePage: React.FC = () => {
                     href="https://www.facebook.com/share/16ahBG51EL/" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 md:px-4 rounded-lg transition-colors text-sm md:text-base"
+                    className="inline-flex items-center bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-black px-3 py-2 md:px-4 rounded-lg transition-all text-sm md:text-base font-semibold shadow-lg"
                   >
                     <Facebook className="h-4 w-4 md:h-5 md:w-5 mr-1 md:mr-2" />
                     Contact on Facebook
@@ -78,7 +78,7 @@ const HomePage: React.FC = () => {
                   href="https://www.facebook.com/groups/1529993591011245/?ref=share&mibextid=NSMWBT"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 md:px-6 md:py-4 rounded-lg transition-colors text-sm md:text-base"
+                  className="flex items-center justify-center bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-black px-4 py-3 md:px-6 md:py-4 rounded-lg transition-all text-sm md:text-base font-semibold shadow-lg"
                 >
                   <Facebook className="h-4 w-4 md:h-5 md:w-5 mr-1 md:mr-2" />
                   Join our Facebook Group
@@ -87,7 +87,7 @@ const HomePage: React.FC = () => {
                   href="https://m.me/j/Aba6iSHafKh901ZD/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 md:px-6 md:py-4 rounded-lg transition-colors text-sm md:text-base"
+                  className="flex items-center justify-center bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-black px-4 py-3 md:px-6 md:py-4 rounded-lg transition-all text-sm md:text-base font-semibold shadow-lg"
                 >
                   <MessagesSquare className="h-4 w-4 md:h-5 md:w-5 mr-1 md:mr-2" />
                   Join our Group Chat
