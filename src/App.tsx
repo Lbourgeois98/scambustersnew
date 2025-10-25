@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
-import VerifyPage from './pages/VerifyPage';
 import AgentsPage from './pages/AgentsPage';
 import ApplyPage from './pages/ApplyPage';
 import AboutPage from './pages/AboutPage';
@@ -34,9 +33,6 @@ function App() {
 
   const renderPage = () => {
     switch (currentPath) {
-      case '/verify':
-        document.title = 'Verify Agent | ScamBusters';
-        return <VerifyPage />;
       case '/agents':
         document.title = 'Verified Agents | ScamBusters';
         return <AgentsPage />;
@@ -57,6 +53,23 @@ function App() {
 
   return (
     <div className="flex flex-col min-h-screen casino-overlay">
+      {/* Casino Video Background */}
+      <div className="video-background">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=1920&h=1080&fit=crop"
+        >
+          <source
+            src="https://cdn.pixabay.com/video/2022/11/03/137446-766955971_large.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      
       <Header />
       <main className="flex-grow">
         {renderPage()}
