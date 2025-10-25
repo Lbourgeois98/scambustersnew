@@ -15,6 +15,17 @@ import { Link } from '../components/Link';
 const AgentBenefitsPage: React.FC = () => {
   return (
     <div className="min-h-screen pt-16 md:pt-20 pb-8 md:pb-16">
+      <style>{`
+        /* Neon pulse animation for gold/red buttons */
+        @keyframes neonPulseGoldRed {
+          0%, 100% { box-shadow: 0 0 12px #facc15, 0 0 25px #f97316, 0 0 45px #ef4444; }
+          50% { box-shadow: 0 0 25px #f97316, 0 0 55px #ef4444; }
+        }
+        .neon-goldred {
+          animation: neonPulseGoldRed 2s infinite alternate;
+        }
+      `}</style>
+
       <div className="container mx-auto px-3 md:px-4">
 
         {/* Hero Section */}
@@ -30,6 +41,17 @@ const AgentBenefitsPage: React.FC = () => {
             Unlock exclusive benefits, increase your revenue by up to 98%, and gain the trust 
             of thousands of players worldwide. Join ScamBusters' verified agent program today.
           </p>
+
+          {/* CTA Button at top */}
+          <div className="mt-6">
+            <Link
+              href="/apply"
+              className="inline-flex items-center justify-center bg-gradient-to-r from-gold-500 to-red-600 hover:from-gold-600 hover:to-red-700 text-white font-semibold px-6 py-3 md:px-8 md:py-4 rounded-lg text-sm md:text-base transition-all transform hover:scale-105 neon-goldred"
+            >
+              Apply Now
+              <ArrowRight className="h-5 w-5 ml-2" />
+            </Link>
+          </div>
         </div>
 
         {/* Key Statistics */}
@@ -47,88 +69,24 @@ const AgentBenefitsPage: React.FC = () => {
           ))}
         </div>
 
-        {/* Main Benefits Grid */}
+        {/* Main Benefits */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mb-8 md:mb-16">
-          {/* Each benefit box */}
-          <div className="dark-box p-4 md:p-6 rounded-lg hover:scale-105 transition-transform">
-            <div className="bg-green-500/20 p-3 rounded-full inline-block mb-4 border border-green-500/30">
-              <TrendingUp className="h-6 w-6 md:h-8 md:w-8 text-green-400" />
+          {[ 
+            { icon: TrendingUp, title: 'Massive Revenue Boost', color: 'green', desc: 'Verified agents see an average 98% increase in player deposits and more sign-ups within the first 30 days of verification.' },
+            { icon: Users, title: 'Exclusive Player Network', color: 'blue', desc: 'Access our network of active players who specifically seek verified agents for their gaming needs.' },
+            { icon: Megaphone, title: 'Marketing & Promotion', color: 'purple', desc: 'Featured directory placement, social media promotion, and verified marketing support.' },
+            { icon: Shield, title: 'Industry Recognition', color: 'gold', desc: 'Join the elite circle of verified agents recognized for professionalism and trust.' },
+            { icon: Globe, title: 'Global Exposure', color: 'red', desc: 'Gain recognition across multiple verified gaming networks and grow your audience.' },
+            { icon: Zap, title: 'Priority Support', color: 'cyan', desc: '24/7 support, dispute resolution, and dedicated account management.' }
+          ].map(({ icon: Icon, title, color, desc }, i) => (
+            <div key={i} className="dark-box p-4 md:p-6 rounded-lg hover:scale-105 transition-transform text-center">
+              <div className={`bg-${color}-500/20 p-3 rounded-full inline-block mb-4 border border-${color}-500/30`}>
+                <Icon className={`h-6 w-6 md:h-8 md:w-8 text-${color}-400`} />
+              </div>
+              <h3 className="text-lg md:text-xl font-bold mb-2 text-white">{title}</h3>
+              <p className="text-gray-300 text-sm md:text-base mb-4">{desc}</p>
             </div>
-            <h3 className="text-lg md:text-xl font-bold mb-2 text-white">Massive Revenue Boost</h3>
-            <p className="text-gray-300 text-sm md:text-base mb-4">
-              Verified agents see an average 98% increase in player deposits and more sign-ups 
-              within the first 30 days of verification.
-            </p>
-            <div className="text-green-400 text-sm font-medium">
-              ✓ Higher conversion ✓ Premium access ✓ Increased trust
-            </div>
-          </div>
-
-          <div className="dark-box p-4 md:p-6 rounded-lg hover:scale-105 transition-transform">
-            <div className="bg-blue-500/20 p-3 rounded-full inline-block mb-4 border border-blue-500/30">
-              <Users className="h-6 w-6 md:h-8 md:w-8 text-blue-400" />
-            </div>
-            <h3 className="text-lg md:text-xl font-bold mb-2 text-white">Exclusive Player Network</h3>
-            <p className="text-gray-300 text-sm md:text-base mb-4">
-              Get access to our network of active players who specifically seek out 
-              verified agents for their gaming needs.
-            </p>
-            <div className="text-blue-400 text-sm font-medium">
-              ✓ High-value players ✓ Regular depositors ✓ Loyal base
-            </div>
-          </div>
-
-          <div className="dark-box p-4 md:p-6 rounded-lg hover:scale-105 transition-transform">
-            <div className="bg-purple-500/20 p-3 rounded-full inline-block mb-4 border border-purple-500/30">
-              <Megaphone className="h-6 w-6 md:h-8 md:w-8 text-purple-400" />
-            </div>
-            <h3 className="text-lg md:text-xl font-bold mb-2 text-white">Marketing & Promotion</h3>
-            <p className="text-gray-300 text-sm md:text-base mb-4">
-              Featured directory placement, social media promotion, and verified marketing support.
-            </p>
-            <div className="text-purple-400 text-sm font-medium">
-              ✓ Directory listing ✓ Social media ✓ Certificate
-            </div>
-          </div>
-
-          <div className="dark-box p-4 md:p-6 rounded-lg hover:scale-105 transition-transform">
-            <div className="bg-gold-500/20 p-3 rounded-full inline-block mb-4 border border-gold-400/30">
-              <Shield className="h-6 w-6 md:h-8 md:w-8 text-gold-400" />
-            </div>
-            <h3 className="text-lg md:text-xl font-bold mb-2 text-white">Industry Recognition</h3>
-            <p className="text-gray-300 text-sm md:text-base mb-4">
-              Join the elite circle of verified agents recognized for professionalism and trust.
-            </p>
-            <div className="text-gold-400 text-sm font-medium">
-              ✓ Verification ✓ Credibility ✓ Prestige
-            </div>
-          </div>
-
-          <div className="dark-box p-4 md:p-6 rounded-lg hover:scale-105 transition-transform">
-            <div className="bg-red-500/20 p-3 rounded-full inline-block mb-4 border border-red-500/30">
-              <Globe className="h-6 w-6 md:h-8 md:w-8 text-red-400" />
-            </div>
-            <h3 className="text-lg md:text-xl font-bold mb-2 text-white">Global Exposure</h3>
-            <p className="text-gray-300 text-sm md:text-base mb-4">
-              Gain recognition across multiple verified gaming networks.
-            </p>
-            <div className="text-red-400 text-sm font-medium">
-              ✓ High reach ✓ Global recognition
-            </div>
-          </div>
-
-          <div className="dark-box p-4 md:p-6 rounded-lg hover:scale-105 transition-transform">
-            <div className="bg-cyan-500/20 p-3 rounded-full inline-block mb-4 border border-cyan-500/30">
-              <Zap className="h-6 w-6 md:h-8 md:w-8 text-cyan-400" />
-            </div>
-            <h3 className="text-lg md:text-xl font-bold mb-2 text-white">Priority Support</h3>
-            <p className="text-gray-300 text-sm md:text-base mb-4">
-              24/7 support, dispute resolution, and dedicated account management.
-            </p>
-            <div className="text-cyan-400 text-sm font-medium">
-              ✓ 24/7 help ✓ Admin assistance
-            </div>
-          </div>
+          ))}
         </div>
 
         {/* Exclusive Benefits */}
@@ -155,7 +113,7 @@ const AgentBenefitsPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Agent Fees Section */}
+        {/* Agent Fees */}
         <div className="mb-8 md:mb-16">
           <div className="dark-box p-6 md:p-8 rounded-lg">
             <div className="text-center mb-8">
@@ -222,14 +180,14 @@ const AgentBenefitsPage: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/apply" 
-                className="group bg-gradient-to-r from-red-600 to-gold-600 hover:from-red-700 hover:to-gold-700 text-white px-8 py-4 rounded-lg transition-all transform hover:scale-105 flex items-center justify-center font-medium text-base shadow-lg shadow-red-500/30"
+                className="group bg-gradient-to-r from-gold-500 to-red-600 hover:from-gold-600 hover:to-red-700 text-white px-8 py-4 rounded-lg transition-all transform hover:scale-105 flex items-center justify-center font-medium text-base neon-goldred"
               >
                 Apply for Verification
                 <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link 
                 href="/agents" 
-                className="bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-black px-8 py-4 rounded-lg transition-all transform hover:scale-105 border border-gold-400/40 flex items-center justify-center font-medium text-base shadow-lg shadow-gold-500/30"
+                className="bg-gradient-to-r from-gold-500 to-red-600 hover:from-gold-600 hover:to-red-700 text-white px-8 py-4 rounded-lg transition-all transform hover:scale-105 flex items-center justify-center font-medium text-base neon-goldred"
               >
                 View Verified Agents
               </Link>
