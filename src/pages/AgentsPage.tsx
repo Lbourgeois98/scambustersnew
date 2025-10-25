@@ -9,11 +9,18 @@ const AgentsPage: React.FC = () => {
           0%, 100% { box-shadow: 0 0 10px #facc15, 0 0 25px #f97316, 0 0 45px #ef4444; }
           50% { box-shadow: 0 0 25px #f97316, 0 0 55px #ef4444; }
         }
+        @keyframes gradientShimmer {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
         .neon-goldred { animation: neonPulseGoldRed 2s infinite alternate; }
         .gradient-text {
-          background: linear-gradient(to right, #facc15, #ef4444);
+          background: linear-gradient(90deg, #facc15, #ef4444, #facc15);
+          background-size: 300% 300%;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
+          animation: gradientShimmer 6s ease-in-out infinite;
         }
       `}</style>
 
