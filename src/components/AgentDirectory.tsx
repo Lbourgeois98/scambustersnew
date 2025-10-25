@@ -93,7 +93,7 @@ const AgentCard: React.FC<AgentCardProps> = ({ agent }) => {
           href={agent.website}
           target="_blank"
           rel="noopener noreferrer"
-          className="block w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-medium py-2 px-4 rounded-lg transition-all text-center flex items-center justify-center mt-4"
+          className="block w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-medium py-2 px-4 rounded-lg transition-all text-center flex items-center justify-center mt-4 shadow-lg"
         >
           Visit Agent's Page
           <ExternalLink className="h-4 w-4 ml-2" />
