@@ -43,7 +43,7 @@ const HeroSection: React.FC = () => {
           {/* NEW View Verified Agents Button */}
           <Link
             href="/agents"
-            className="inline-flex items-center justify-center bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-black font-semibold px-6 py-3 md:px-8 md:py-4 rounded-lg text-sm md:text-base transition-all transform hover:scale-105 neon-goldred border border-gold-400/40"
+            className="inline-flex items-center justify-center bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-white font-semibold px-6 py-3 md:px-8 md:py-4 rounded-lg text-sm md:text-base transition-all transform hover:scale-105 neon-goldred border border-gold-400/40"
           >
             <Users className="h-5 w-5 md:h-6 md:w-6 mr-2" />
             View Verified Agents
