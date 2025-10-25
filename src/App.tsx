@@ -52,8 +52,8 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen casino-overlay">
-      {/* Casino Video Background */}
+    <div className="flex flex-col min-h-screen">
+      {/* Casino Video Background - More vibrant */}
       <div className="video-background">
         <video
           autoPlay
