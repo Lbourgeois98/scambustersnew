@@ -249,22 +249,20 @@ const AgentBenefitsPage: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
               <Link 
                 href="/apply" 
-                className="group bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-black px-6 py-3 md:px-8 md:py-4 rounded-lg transition-all transform hover:scale-105 flex items-center justify-center font-medium text-sm md:text-base"
+                className="group bg-gradient-to-r from-red-600 to-gold-600 hover:from-red-700 hover:to-gold-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg transition-all transform hover:scale-105 flex items-center justify-center font-medium text-sm md:text-base shadow-lg shadow-red-500/30"
               >
                 Apply for Verification
                 <ArrowRight className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link 
                 href="/agents" 
-                className="bg-white/10 hover:bg-white/20 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg transition-all border border-white/20 hover:border-white/40 flex items-center justify-center font-medium text-sm md:text-base"
+                className="bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-black px-6 py-3 md:px-8 md:py-4 rounded-lg transition-all transform hover:scale-105 border border-gold-400/40 flex items-center justify-center font-medium text-sm md:text-base shadow-lg shadow-gold-500/30"
               >
                 View Verified Agents
               </Link>
             </div>
           </div>
         </div>
-      </div>
-    </div>
   );
 };
 
