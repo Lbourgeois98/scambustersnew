@@ -10,32 +10,39 @@ const AgentsPage: React.FC = () => {
           0%, 100% { box-shadow: 0 0 10px #facc15, 0 0 25px #f97316, 0 0 45px #ef4444; }
           50% { box-shadow: 0 0 25px #f97316, 0 0 55px #ef4444; }
         }
-        @keyframes neonPulseGold {
-          0%, 100% { box-shadow: 0 0 10px #facc15, 0 0 25px #facc15, 0 0 35px #fde047; }
-          50% { box-shadow: 0 0 25px #fde047, 0 0 45px #facc15; }
+        .neon-goldred {
+          animation: neonPulseGoldRed 2s infinite alternate;
         }
-        .neon-goldred { animation: neonPulseGoldRed 2s infinite alternate; }
-        .neon-gold { animation: neonPulseGold 2.5s infinite alternate; }
+        .gradient-text {
+          background: linear-gradient(to right, #facc15, #ef4444);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
       `}</style>
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Header Section */}
-        <div className="text-center mb-10">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 text-white neon-goldred inline-block px-6 py-3 rounded-lg bg-gradient-to-r from-gold-500/10 to-red-600/10 border border-gold-400/30">
-            Verified Agents Directory
+        <div className="text-center mb-6 md:mb-10">
+          <h1 className="text-3xl md:text-4xl font-bold gradient-text mb-3 md:mb-4">
+            Verified Agents
           </h1>
-          <p className="text-gray-300 max-w-2xl mx-auto text-sm md:text-base mt-3">
-            Search for an agent by verification ID or browse our comprehensive directory of trusted, verified casino agents.
+          <p className="text-gray-300 max-w-xl mx-auto text-sm md:text-base">
+            Search for a verified casino agent or browse our trusted directory to find legitimate, ScamBusters-approved agents.
           </p>
         </div>
 
-        {/* Verification Search */}
-        <div className="mb-12 neon-goldred rounded-lg p-6 bg-black/30 border border-gold-400/30 backdrop-blur-md">
-          <VerificationSearch />
+        {/* Verification Search - smaller and compact */}
+        <div className="mb-8 max-w-md mx-auto">
+          <div className="rounded-lg p-4 md:p-5 bg-black/40 border border-gold-400/30 backdrop-blur-md neon-goldred">
+            <VerificationSearch />
+          </div>
         </div>
 
-        {/* Agent Directory */}
-        <div className="dark-box rounded-lg p-6 md:p-8 neon-gold border border-gold-400/30 bg-black/40 backdrop-blur-md">
+        {/* Agent Directory - red and gold glowing theme */}
+        <div className="dark-box rounded-lg p-6 md:p-8 bg-gradient-to-r from-red-600/10 via-black/40 to-gold-500/10 border border-gold-400/30 backdrop-blur-md neon-goldred">
+          <h2 className="text-2xl font-bold mb-6 text-center gradient-text">
+            Verified Agents Directory
+          </h2>
           <AgentDirectory />
         </div>
       </div>
