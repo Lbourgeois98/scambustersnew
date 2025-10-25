@@ -11,16 +11,10 @@ function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
 
   useEffect(() => {
-    const handlePopState = () => {
-      setCurrentPath(window.location.pathname);
-    };
-
+    const handlePopState = () => setCurrentPath(window.location.pathname);
     window.addEventListener('popstate', handlePopState);
 
-    const handleNavigation = () => {
-      setCurrentPath(window.location.pathname);
-    };
-
+    const handleNavigation = () => setCurrentPath(window.location.pathname);
     window.addEventListener('navigation', handleNavigation);
 
     return () => {
@@ -50,38 +44,81 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen relative">
-      {/* VivaGo.AI Video Background */}
+    <div className="flex flex-col min-h-screen relative overflow-hidden">
+
+      {/* 🎃 Multi-Layer Halloween Casino Background */}
       <div
-        className="video-background"
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          overflow: 'hidden',
-          zIndex: -1,
-        }}
+        className="absolute inset-0 overflow-hidden"
+        style={{ zIndex: -1 }}
       >
-        <iframe
-          src="https://vivago.ai/embed/1aabb219-8ebe-4f59-aa54-4946dfdacfda?autoplay=1&muted=1&loop=1&controls=0"
-          title="ScamBusters Background Video"
-          frameBorder="0"
-          allow="autoplay; fullscreen"
-          allowFullScreen
+        {/* Casino Neon Base Layer */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
           style={{
+            position: 'absolute',
             width: '100%',
             height: '100%',
+            objectFit: 'cover',
+            filter: 'brightness(0.6) saturate(1.3)',
+          }}
+        >
+          <source src="/videos/halloween-casino-bg.mp4" type="video/mp4" />
+        </video>
+
+        {/* Spooky Overlay Layer 1 – Fog / Pumpkins */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          style={{
+            position: 'absolute',
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            mixBlendMode: 'screen',
+            opacity: 0.4,
+          }}
+        >
+          <source src="/videos/halloween-fog-overlay.mp4" type="video/mp4" />
+        </video>
+
+        {/* Overlay Layer 2 – Bats / Haunted Glow */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          style={{
+            position: 'absolute',
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            mixBlendMode: 'lighten',
+            opacity: 0.35,
+          }}
+        >
+          <source src="/videos/halloween-bats-overlay.mp4" type="video/mp4" />
+        </video>
+
+        {/* Dark filter for contrast */}
+        <div
+          style={{
             position: 'absolute',
             top: 0,
             left: 0,
-            objectFit: 'cover',
+            width: '100%',
+            height: '100%',
+            background:
+              'radial-gradient(circle at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.85) 100%)',
           }}
-        ></iframe>
+        ></div>
       </div>
 
-      {/* Site Layout */}
+      {/* Layout */}
       <Header />
       <main className="flex-grow relative z-10">
         {renderPage()}
