@@ -2,7 +2,8 @@ import React from 'react';
 import HeroSection from '../components/HeroSection';
 import TrustIndicators from '../components/TrustIndicators';
 import VerificationProcess from '../components/VerificationProcess';
-import { Facebook, MessagesSquare } from 'lucide-react';
+import { Facebook, MessagesSquare, ArrowRight } from 'lucide-react';
+import { Link } from '../components/Link';
 
 const HomePage: React.FC = () => {
   return (
@@ -51,90 +52,97 @@ const HomePage: React.FC = () => {
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6">
-              
-              {/* Darren */}
-              <div className="relative">
-                <div className="absolute -inset-1 bg-blue-500 rounded-lg blur-lg opacity-75 animate-pulse"></div>
-                <div className="relative dark-box p-4 md:p-6 rounded-lg text-center">
-                  <h3 className="font-bold text-base md:text-lg mb-3 md:mb-4 text-white">Darren Boykin</h3>
-                  <a
-                    href="https://www.facebook.com/share/16tXMhVYMu/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 md:px-4 rounded-lg transition-all text-sm md:text-base font-semibold neon-blue"
-                  >
-                    <Facebook className="h-4 w-4 md:h-5 md:w-5 mr-1 md:mr-2" />
-                    Contact on Facebook
-                  </a>
-                </div>
-              </div>
-
-              {/* Brittney */}
-              <div className="relative">
-                <div className="absolute -inset-1 bg-pink-500 rounded-lg blur-lg opacity-75 animate-pulse"></div>
-                <div className="relative dark-box p-4 md:p-6 rounded-lg text-center">
-                  <h3 className="font-bold text-base md:text-lg mb-3 md:mb-4 text-white">Brittney Kellar</h3>
-                  <a
-                    href="https://www.facebook.com/PrettyBrittyyxo/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center bg-pink-600 hover:bg-pink-700 text-white px-3 py-2 md:px-4 rounded-lg transition-all text-sm md:text-base font-semibold neon-pink"
-                  >
-                    <Facebook className="h-4 w-4 md:h-5 md:w-5 mr-1 md:mr-2" />
-                    Contact on Facebook
-                  </a>
-                </div>
-              </div>
-
-              {/* LeAnn */}
-              <div className="relative">
-                <div className="absolute -inset-1 bg-green-500 rounded-lg blur-lg opacity-75 animate-pulse"></div>
-                <div className="relative dark-box p-4 md:p-6 rounded-lg text-center">
-                  <h3 className="font-bold text-base md:text-lg mb-3 md:mb-4 text-white">LeAnn Bourgeois</h3>
-                  <a
-                    href="https://www.facebook.com/share/16ahBG51EL/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 md:px-4 rounded-lg transition-all text-sm md:text-base font-semibold neon-green"
-                  >
-                    <Facebook className="h-4 w-4 md:h-5 md:w-5 mr-1 md:mr-2" />
-                    Contact on Facebook
-                  </a>
-                </div>
-              </div>
+          {/* Admin Cards */}
+          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+            {/* Darren */}
+            <div className="dark-box p-4 md:p-6 rounded-lg text-center">
+              <h3 className="font-bold text-base md:text-lg mb-3 text-white">Darren Boykin</h3>
+              <a 
+                href="https://www.facebook.com/share/16tXMhVYMu/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 md:px-4 rounded-lg transition-all text-sm md:text-base font-semibold neon-blue"
+              >
+                <Facebook className="h-4 w-4 md:h-5 md:w-5 mr-2" /> Contact on Facebook
+              </a>
             </div>
 
-            {/* Community Section */}
-            <div className="mt-4 md:mt-8 dark-box p-4 md:p-6 rounded-lg">
-              <h3 className="font-bold text-base md:text-lg mb-3 md:mb-4 text-white">
-                Join Our Community
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+            {/* Brittney */}
+            <div className="dark-box p-4 md:p-6 rounded-lg text-center">
+              <h3 className="font-bold text-base md:text-lg mb-3 text-white">Brittney Kellar</h3>
+              <a 
+                href="https://www.facebook.com/PrettyBrittyyxo/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-pink-600 hover:bg-pink-700 text-white px-3 py-2 md:px-4 rounded-lg transition-all text-sm md:text-base font-semibold neon-pink"
+              >
+                <Facebook className="h-4 w-4 md:h-5 md:w-5 mr-2" /> Contact on Facebook
+              </a>
+            </div>
 
-                {/* Facebook Group – Gold/Red Glow */}
-                <a
-                  href="https://www.facebook.com/groups/1529993591011245/?ref=share&mibextid=NSMWBT"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center bg-gradient-to-r from-gold-500 to-red-600 hover:from-gold-600 hover:to-red-700 text-white px-4 py-3 md:px-6 md:py-4 rounded-lg transition-all text-sm md:text-base font-semibold neon-goldred"
-                >
-                  <Facebook className="h-4 w-4 md:h-5 md:w-5 mr-1 md:mr-2" />
-                  Join our Facebook Group
-                </a>
+            {/* LeAnn */}
+            <div className="dark-box p-4 md:p-6 rounded-lg text-center">
+              <h3 className="font-bold text-base md:text-lg mb-3 text-white">LeAnn Bourgeois</h3>
+              <a 
+                href="https://www.facebook.com/share/16ahBG51EL/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 md:px-4 rounded-lg transition-all text-sm md:text-base font-semibold neon-green"
+              >
+                <Facebook className="h-4 w-4 md:h-5 md:w-5 mr-2" /> Contact on Facebook
+              </a>
+            </div>
+          </div>
 
-                {/* Messenger Group – Gold Glow */}
-                <a
-                  href="https://m.me/j/Aba6iSHafKh901ZD/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-white px-4 py-3 md:px-6 md:py-4 rounded-lg transition-all text-sm md:text-base font-semibold neon-gold"
-                >
-                  <MessagesSquare className="h-4 w-4 md:h-5 md:w-5 mr-1 md:mr-2" />
-                  Join our Group Chat
-                </a>
-              </div>
+          {/* Community Buttons */}
+          <div className="mt-8 dark-box p-4 md:p-6 rounded-lg text-center">
+            <h3 className="font-bold text-base md:text-lg mb-3 text-white">Join Our Community</h3>
+            <div className="flex flex-col md:flex-row justify-center gap-4">
+              <a
+                href="https://www.facebook.com/groups/1529993591011245/?ref=share&mibextid=NSMWBT"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center bg-gradient-to-r from-gold-500 to-red-600 hover:from-gold-600 hover:to-red-700 text-white px-5 py-3 md:px-6 md:py-4 rounded-lg font-semibold neon-goldred"
+              >
+                <Facebook className="h-4 w-4 md:h-5 md:w-5 mr-2" />
+                Join Our Facebook Group
+              </a>
+              <a
+                href="https://m.me/j/Aba6iSHafKh901ZD/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-white px-5 py-3 md:px-6 md:py-4 rounded-lg font-semibold neon-gold"
+              >
+                <MessagesSquare className="h-4 w-4 md:h-5 md:w-5 mr-2" />
+                Join Our Group Chat
+              </a>
+            </div>
+          </div>
+
+          {/* Bottom CTA: Apply & Verified Agents */}
+          <div className="mt-10 dark-box p-6 md:p-8 rounded-lg text-center">
+            <h2 className="text-xl md:text-2xl font-bold mb-4 text-white">
+              Ready to <span className="text-gold-500">Transform</span> Your Business?
+            </h2>
+            <p className="text-gray-300 mb-6 text-sm md:text-base">
+              Join hundreds of successful agents who boosted their revenue through ScamBusters verification.
+            </p>
+
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Link
+                href="/apply"
+                className="bg-gradient-to-r from-gold-500 to-red-600 hover:from-gold-600 hover:to-red-700 text-white px-8 py-4 rounded-lg font-medium text-base flex items-center justify-center neon-goldred"
+              >
+                Apply for Verification
+                <ArrowRight className="h-5 w-5 ml-2" />
+              </Link>
+
+              <Link
+                href="/agents"
+                className="bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-white px-8 py-4 rounded-lg font-medium text-base flex items-center justify-center neon-gold"
+              >
+                View Verified Agents
+              </Link>
             </div>
           </div>
         </div>
