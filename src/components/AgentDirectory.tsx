@@ -9,23 +9,40 @@ const AgentDirectory: React.FC = () => {
   
   const filteredAgents = agents.filter((agent) => {
     const searchLower = searchTerm.toLowerCase();
-    const matchesSearch = searchTerm === '' || 
-                         agent.name.toLowerCase().includes(searchLower) || 
-                         agent.verificationId.toLowerCase().includes(searchLower);
-    
-    const matchesStatus = statusFilter === 'all' ? true : agent.status === statusFilter;
-    
+    const matchesSearch =
+      searchTerm === '' ||
+      agent.name.toLowerCase().includes(searchLower) ||
+      agent.verificationId.toLowerCase().includes(searchLower);
+
+    const matchesStatus =
+      statusFilter === 'all' ? true : agent.status === statusFilter;
+
     return matchesSearch && matchesStatus;
   });
 
   return (
     <div className="w-full">
+      <style>{`
+        @keyframes neonPulseGoldRed {
+          0%, 100% {
+            box-shadow: 0 0 10px #facc15, 0 0 25px #f97316, 0 0 45px #ef4444;
+          }
+          50% {
+            box-shadow: 0 0 25px #f97316, 0 0 55px #ef4444;
+          }
+        }
+        .neon-goldred {
+          animation: neonPulseGoldRed 2s infinite alternate;
+        }
+      `}</style>
+
       <div className="mb-8">
         <h2 className="text-2xl font-bold mb-4 text-white">Agent Directory</h2>
         <p className="text-gray-300 mb-6">
           Browse our directory of casino agents and their verification status.
         </p>
-        
+
+        {/* Search + Filter */}
         <div className="flex flex-col md:flex-row md:items-center md:space-x-4 space-y-4 md:space-y-0 mb-6">
           <div className="relative flex-grow">
             <input
@@ -39,30 +56,41 @@ const AgentDirectory: React.FC = () => {
               <Search className="h-5 w-5 text-gray-400" />
             </div>
           </div>
-          
+
           <div className="flex-shrink-0">
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
               className="w-full md:w-auto px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all text-white"
             >
-              <option value="all" className="bg-black text-white">All Statuses</option>
-              <option value="verified" className="bg-black text-white">Verified</option>
-              <option value="pending" className="bg-black text-white">Pending</option>
-              <option value="revoked" className="bg-black text-white">Revoked</option>
+              <option value="all" className="bg-black text-white">
+                All Statuses
+              </option>
+              <option value="verified" className="bg-black text-white">
+                Verified
+              </option>
+              <option value="pending" className="bg-black text-white">
+                Pending
+              </option>
+              <option value="revoked" className="bg-black text-white">
+                Revoked
+              </option>
             </select>
           </div>
         </div>
       </div>
-      
+
+      {/* Agent Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredAgents.map((agent) => (
           <AgentCard key={agent.id} agent={agent} />
         ))}
-        
+
         {filteredAgents.length === 0 && (
           <div className="col-span-full dark-box-light p-8 rounded-lg text-center">
-            <p className="text-gray-300">No agents found matching your search criteria.</p>
+            <p className="text-gray-300">
+              No agents found matching your search criteria.
+            </p>
           </div>
         )}
       </div>
@@ -76,27 +104,36 @@ interface AgentCardProps {
 
 const AgentCard: React.FC<AgentCardProps> = ({ agent }) => {
   return (
-    <div className="dark-box-light rounded-lg overflow-hidden transition-transform hover:transform hover:scale-105">
+    <div className="dark-box-light rounded-lg overflow-hidden transition-transform hover:scale-105 bg-black/40 border border-gold-400/30 backdrop-blur-md">
       <div className="p-6">
         <div className="flex justify-between items-start mb-4">
           <div>
             <h3 className="text-lg font-bold mb-2 text-white">{agent.name}</h3>
             <p className="text-sm text-gray-400">ID: {agent.verificationId}</p>
           </div>
-          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-500/20 text-green-400 border border-green-500/30">
-            <CheckCircle className="h-4 w-4 text-green-400 mr-1" />
-            Verified
-          </span>
+          {agent.status === 'verified' && (
+            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-500/20 text-green-400 border border-green-500/30">
+              <CheckCircle className="h-4 w-4 text-green-400 mr-1" />
+              Verified
+            </span>
+          )}
         </div>
-        
-        <a 
+
+        {/* 🔥 Updated Visit Agent's Page Button */}
+        <a
           href={agent.website}
           target="_blank"
           rel="noopener noreferrer"
-          className="block w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-medium py-2 px-4 rounded-lg transition-all text-center flex items-center justify-center mt-4 shadow-lg"
+          className="group flex items-center justify-center gap-2 
+                     bg-gradient-to-r from-gold-500 via-red-600 to-red-700 
+                     hover:from-gold-600 hover:via-red-700 hover:to-red-800 
+                     text-white font-semibold py-2 px-4 rounded-lg 
+                     transition-all transform hover:scale-105 
+                     shadow-lg shadow-red-500/30 border border-gold-400/40 
+                     neon-goldred mt-4"
         >
-          Visit Agent's Page
-          <ExternalLink className="h-4 w-4 ml-2" />
+          Visit Agent’s Page
+          <ExternalLink className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
         </a>
       </div>
     </div>
