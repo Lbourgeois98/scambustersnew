@@ -15,10 +15,8 @@ function App() {
       setCurrentPath(window.location.pathname);
     };
 
-    // Listen for navigation changes
     window.addEventListener('popstate', handlePopState);
 
-    // Also listen for custom navigation events
     const handleNavigation = () => {
       setCurrentPath(window.location.pathname);
     };
@@ -52,26 +50,40 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* Casino Video Background - More vibrant */}
-      <div className="video-background">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster="https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=1920&h=1080&fit=crop"
-        >
-          <source
-            src="https://cdn.pixabay.com/video/2022/11/03/137446-766955971_large.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
+    <div className="flex flex-col min-h-screen relative">
+      {/* VivaGo.AI Video Background */}
+      <div
+        className="video-background"
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          overflow: 'hidden',
+          zIndex: -1,
+        }}
+      >
+        <iframe
+          src="https://vivago.ai/embed/1aabb219-8ebe-4f59-aa54-4946dfdacfda?autoplay=1&muted=1&loop=1&controls=0"
+          title="ScamBusters Background Video"
+          frameBorder="0"
+          allow="autoplay; fullscreen"
+          allowFullScreen
+          style={{
+            width: '100%',
+            height: '100%',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            objectFit: 'cover',
+          }}
+        ></iframe>
       </div>
-      
+
+      {/* Site Layout */}
       <Header />
-      <main className="flex-grow">
+      <main className="flex-grow relative z-10">
         {renderPage()}
       </main>
       <Footer />
