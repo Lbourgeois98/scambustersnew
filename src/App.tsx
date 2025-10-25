@@ -46,79 +46,34 @@ function App() {
   return (
     <div className="flex flex-col min-h-screen relative overflow-hidden">
 
-      {/* 🎃 Optimized Multi-Layer Halloween Casino Background */}
-      <div
-        className="fixed top-0 left-0 w-full h-full overflow-hidden"
+      {/* 🎃 Single Halloween Background Video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        className="fixed top-0 left-0 w-full h-full object-cover z-[-1]"
         style={{
-          zIndex: -1,
+          filter: 'brightness(0.7) saturate(1.3)',
           backgroundColor: '#000',
         }}
       >
-        {/* Base Casino Video */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          className="absolute top-1/2 left-1/2 min-w-full min-h-full transform -translate-x-1/2 -translate-y-1/2"
-          style={{
-            objectFit: 'cover',
-            filter: 'brightness(0.7) saturate(1.4)',
-            transition: 'opacity 1s ease-in-out',
-          }}
-        >
-          <source src="/videos/halloween-casino-bg.mp4" type="video/mp4" />
-        </video>
+        <source src="/videos/halloween.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
-        {/* Fog Overlay */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          className="absolute top-1/2 left-1/2 min-w-full min-h-full transform -translate-x-1/2 -translate-y-1/2"
-          style={{
-            objectFit: 'contain',
-            opacity: 0.35,
-            mixBlendMode: 'screen',
-            filter: 'blur(1px)',
-            transform: 'translate(-50%, -50%) scale(1.05)',
-          }}
-        >
-          <source src="/videos/halloween-fog-overlay.mp4" type="video/mp4" />
-        </video>
+      {/* Optional dark overlay for readability */}
+      <div
+        className="fixed inset-0"
+        style={{
+          background:
+            'linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.75) 100%)',
+          zIndex: 0,
+        }}
+      ></div>
 
-        {/* Bats / Glow Overlay */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          className="absolute top-1/2 left-1/2 min-w-full min-h-full transform -translate-x-1/2 -translate-y-1/2"
-          style={{
-            objectFit: 'contain',
-            opacity: 0.4,
-            mixBlendMode: 'lighten',
-            transform: 'translate(-50%, -50%) scale(1.1)',
-          }}
-        >
-          <source src="/videos/halloween-bats-overlay.mp4" type="video/mp4" />
-        </video>
-
-        {/* Subtle dark overlay for readability */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              'linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.75) 100%)',
-          }}
-        ></div>
-      </div>
-
-      {/* Page Layout */}
+      {/* Site Layout */}
       <Header />
       <main className="flex-grow relative z-10 backdrop-blur-[1px]">
         {renderPage()}
