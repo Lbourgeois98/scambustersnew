@@ -46,81 +46,81 @@ function App() {
   return (
     <div className="flex flex-col min-h-screen relative overflow-hidden">
 
-      {/* 🎃 Multi-Layer Halloween Casino Background */}
+      {/* 🎃 Optimized Multi-Layer Halloween Casino Background */}
       <div
-        className="absolute inset-0 overflow-hidden"
-        style={{ zIndex: -1 }}
+        className="fixed top-0 left-0 w-full h-full overflow-hidden"
+        style={{
+          zIndex: -1,
+          backgroundColor: '#000',
+        }}
       >
-        {/* Casino Neon Base Layer */}
+        {/* Base Casino Video */}
         <video
           autoPlay
           muted
           loop
           playsInline
+          preload="auto"
+          className="absolute top-1/2 left-1/2 min-w-full min-h-full transform -translate-x-1/2 -translate-y-1/2"
           style={{
-            position: 'absolute',
-            width: '100%',
-            height: '100%',
             objectFit: 'cover',
-            filter: 'brightness(0.6) saturate(1.3)',
+            filter: 'brightness(0.7) saturate(1.4)',
+            transition: 'opacity 1s ease-in-out',
           }}
         >
           <source src="/videos/halloween-casino-bg.mp4" type="video/mp4" />
         </video>
 
-        {/* Spooky Overlay Layer 1 – Fog / Pumpkins */}
+        {/* Fog Overlay */}
         <video
           autoPlay
           muted
           loop
           playsInline
+          preload="auto"
+          className="absolute top-1/2 left-1/2 min-w-full min-h-full transform -translate-x-1/2 -translate-y-1/2"
           style={{
-            position: 'absolute',
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
+            objectFit: 'contain',
+            opacity: 0.35,
             mixBlendMode: 'screen',
-            opacity: 0.4,
+            filter: 'blur(1px)',
+            transform: 'translate(-50%, -50%) scale(1.05)',
           }}
         >
           <source src="/videos/halloween-fog-overlay.mp4" type="video/mp4" />
         </video>
 
-        {/* Overlay Layer 2 – Bats / Haunted Glow */}
+        {/* Bats / Glow Overlay */}
         <video
           autoPlay
           muted
           loop
           playsInline
+          preload="auto"
+          className="absolute top-1/2 left-1/2 min-w-full min-h-full transform -translate-x-1/2 -translate-y-1/2"
           style={{
-            position: 'absolute',
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
+            objectFit: 'contain',
+            opacity: 0.4,
             mixBlendMode: 'lighten',
-            opacity: 0.35,
+            transform: 'translate(-50%, -50%) scale(1.1)',
           }}
         >
           <source src="/videos/halloween-bats-overlay.mp4" type="video/mp4" />
         </video>
 
-        {/* Dark filter for contrast */}
+        {/* Subtle dark overlay for readability */}
         <div
+          className="absolute inset-0"
           style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
             background:
-              'radial-gradient(circle at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.85) 100%)',
+              'linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.75) 100%)',
           }}
         ></div>
       </div>
 
-      {/* Layout */}
+      {/* Page Layout */}
       <Header />
-      <main className="flex-grow relative z-10">
+      <main className="flex-grow relative z-10 backdrop-blur-[1px]">
         {renderPage()}
       </main>
       <Footer />
