@@ -140,7 +140,7 @@ const Header: React.FC = () => {
               href="https://www.facebook.com/groups/1529993591011245/?ref=share&mibextid=NSMWBT"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-md transition-colors flex items-center justify-center text-sm font-semibold shadow-lg"
+              className="bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-black px-4 py-3 rounded-lg transition-all flex items-center justify-center text-sm font-semibold shadow-lg"
               onClick={() => setIsMenuOpen(false)}
             >
               <svg className="h-4 w-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
