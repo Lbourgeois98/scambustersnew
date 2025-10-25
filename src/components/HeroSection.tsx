@@ -18,8 +18,8 @@ const HeroSection: React.FC = () => {
       <div className="max-w-4xl mx-auto">
         {/* Headline */}
         <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-tight">
-          Welcome to <span className="text-gold-500">ScamBusters</span> 
-          <span className="text-red-500"> Verified Casino Agents</span>
+          Welcome to <span className="text-red-500">Scam</span> 
+          <span className="text-gold-500">Busters</span>
         </h1>
 
         <p className="text-gray-300 max-w-2xl mx-auto mb-8 text-sm md:text-lg">
