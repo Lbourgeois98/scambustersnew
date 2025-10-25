@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, Shield, CheckCircle } from 'lucide-react';
+import { Shield } from 'lucide-react';
 import { Link } from './Link';
 
 const HeroSection: React.FC = () => {
@@ -30,14 +30,28 @@ const HeroSection: React.FC = () => {
               Search for agent verification IDs and play with confidence.
             </p>
             
-            <div className="animate-slideUp animation-delay-400">
+            <div className="animate-slideUp animation-delay-400 flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center px-4">
               <Link 
-                href="/verify" 
-                className="group bg-red-600 hover:bg-red-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-md transition-all transform hover:scale-105 flex items-center justify-center inline-flex text-sm md:text-base"
+                href="/agents" 
+                className="group bg-gold-500 hover:bg-gold-600 text-black px-6 py-3 md:px-8 md:py-4 rounded-md transition-all transform hover:scale-105 flex items-center justify-center text-sm md:text-base font-semibold shadow-lg w-full sm:w-auto"
               >
-                <Search className="h-5 w-5 mr-2 group-hover:rotate-12 transition-transform" />
-                Verify Agent Now
+                <Shield className="h-5 w-5 mr-2 group-hover:rotate-12 transition-transform" />
+                View Verified Agents
               </Link>
+            </div>
+            
+            <div className="mt-6 md:mt-8 animate-slideUp animation-delay-600">
+              <a 
+                href="https://www.facebook.com/groups/1529993591011245/?ref=share&mibextid=NSMWBT"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-md transition-all transform hover:scale-105 text-sm md:text-base font-semibold shadow-lg"
+              >
+                <svg className="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+                Join Our Facebook Group
+              </a>
             </div>
           </div>
         </div>
