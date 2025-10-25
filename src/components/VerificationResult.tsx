@@ -53,7 +53,7 @@ const VerificationResult: React.FC<VerificationResultProps> = ({ result }) => {
           href={agent.website}
           target="_blank"
           rel="noopener noreferrer"
-          className="block w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-medium py-3 px-4 rounded-lg transition-all text-center flex items-center justify-center"
+          className="block w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-medium py-3 px-4 rounded-lg transition-all text-center flex items-center justify-center shadow-lg"
         >
           Visit Agent's Page
           <ExternalLink className="h-4 w-4 ml-2" />
@@ -70,4 +70,4 @@ const VerificationResult: React.FC<VerificationResultProps> = ({ result }) => {
   );
 };
 
-export default VerificationResult
+export default VerificationResult;
