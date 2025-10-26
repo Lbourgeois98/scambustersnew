@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
@@ -9,6 +9,8 @@ import AgentBenefitsPage from './pages/AgentBenefitsPage';
 
 function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [audioStarted, setAudioStarted] = useState(false);
 
   useEffect(() => {
     const handlePopState = () => setCurrentPath(window.location.pathname);
@@ -22,6 +24,33 @@ function App() {
       window.removeEventListener('navigation', handleNavigation);
     };
   }, []);
+
+  useEffect(() => {
+    const startAudio = () => {
+      if (audioRef.current && !audioStarted) {
+        audioRef.current.volume = 0.3;
+        audioRef.current.play().catch(err => {
+          console.log('Audio autoplay prevented:', err);
+        });
+        setAudioStarted(true);
+      }
+    };
+
+    // Try to play immediately
+    startAudio();
+
+    // Also try on any user interaction
+    const events = ['click', 'touchstart', 'keydown'];
+    events.forEach(event => {
+      document.addEventListener(event, startAudio, { once: true });
+    });
+
+    return () => {
+      events.forEach(event => {
+        document.removeEventListener(event, startAudio);
+      });
+    };
+  }, [audioStarted]);
 
   const renderPage = () => {
     switch (currentPath) {
@@ -65,9 +94,9 @@ function App() {
 
       {/* 🎵 Halloween Background Music - Auto Play */}
       <audio
-        autoPlay
+        ref={audioRef}
         loop
-        volume={0.3}
+        preload="auto"
         src="/halloween-dubstep.mp3"
         style={{ display: 'none' }}
       />
