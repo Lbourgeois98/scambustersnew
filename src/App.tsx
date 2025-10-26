@@ -63,6 +63,15 @@ function App() {
         Your browser does not support the video tag.
       </video>
 
+      {/* 🎵 Halloween Background Music - Auto Play */}
+      <audio
+        autoPlay
+        loop
+        volume={0.3}
+        src="/halloween-dubstep.mp3"
+        style={{ display: 'none' }}
+      />
+
       {/* Optional dark overlay for readability */}
       <div
         className="fixed inset-0"
