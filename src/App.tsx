@@ -12,6 +12,7 @@ function App() {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [audioStarted, setAudioStarted] = useState(false);
 
+  // Handle page navigation (SPA style)
   useEffect(() => {
     const handlePopState = () => setCurrentPath(window.location.pathname);
     window.addEventListener('popstate', handlePopState);
@@ -25,33 +26,39 @@ function App() {
     };
   }, []);
 
+  // Handle audio playback (with autoplay fix)
   useEffect(() => {
     const startAudio = () => {
-      if (audioRef.current && !audioStarted) {
-        audioRef.current.volume = 0.3;
-        audioRef.current.play().catch(err => {
-          console.log('Audio autoplay prevented:', err);
+      const audio = audioRef.current;
+      if (audio && !audioStarted) {
+        audio.volume = 0.3;
+        audio.loop = true;
+
+        audio.play().then(() => {
+          setAudioStarted(true);
+        }).catch((err) => {
+          console.warn('Autoplay prevented, waiting for user action:', err);
         });
-        setAudioStarted(true);
       }
     };
 
-    // Try to play immediately
+    // Try immediate playback (for browsers that allow autoplay)
     startAudio();
 
-    // Also try on any user interaction
+    // Trigger on user interaction if autoplay is blocked
     const events = ['click', 'touchstart', 'keydown'];
-    events.forEach(event => {
+    events.forEach((event) => {
       document.addEventListener(event, startAudio, { once: true });
     });
 
     return () => {
-      events.forEach(event => {
+      events.forEach((event) => {
         document.removeEventListener(event, startAudio);
       });
     };
   }, [audioStarted]);
 
+  // Determine which page to render
   const renderPage = () => {
     switch (currentPath) {
       case '/agents':
@@ -74,8 +81,7 @@ function App() {
 
   return (
     <div className="flex flex-col min-h-screen relative overflow-hidden">
-
-      {/* 🎃 Single Halloween Background Video */}
+      {/* 🎃 Halloween Background Video */}
       <video
         autoPlay
         muted
@@ -92,16 +98,16 @@ function App() {
         Your browser does not support the video tag.
       </video>
 
-      {/* 🎵 Halloween Background Music - Auto Play */}
+      {/* 🎵 Halloween Dubstep Background Music */}
       <audio
         ref={audioRef}
-        loop
         preload="auto"
         src="/halloween-dubstep.mp3"
+        loop
         style={{ display: 'none' }}
       />
 
-      {/* Optional dark overlay for readability */}
+      {/* Optional dark overlay */}
       <div
         className="fixed inset-0"
         style={{
@@ -111,7 +117,7 @@ function App() {
         }}
       ></div>
 
-      {/* Site Layout */}
+      {/* Layout */}
       <Header />
       <main className="flex-grow relative z-10 backdrop-blur-[1px]">
         {renderPage()}
