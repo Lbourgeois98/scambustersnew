@@ -12,7 +12,7 @@ function App() {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [audioStarted, setAudioStarted] = useState(false);
 
-  // Handle page navigation (SPA style)
+  // Navigation handling
   useEffect(() => {
     const handlePopState = () => setCurrentPath(window.location.pathname);
     window.addEventListener('popstate', handlePopState);
@@ -26,39 +26,51 @@ function App() {
     };
   }, []);
 
-  // Handle audio playback (with autoplay fix)
+  // 🎵 Background music with autoplay + fade-in
   useEffect(() => {
     const startAudio = () => {
       const audio = audioRef.current;
       if (audio && !audioStarted) {
-        audio.volume = 0.3;
+        audio.volume = 0;
         audio.loop = true;
 
         audio.play().then(() => {
           setAudioStarted(true);
+
+          // Fade in from 0 → 0.3 volume over 5 seconds
+          const fadeDuration = 5000;
+          const targetVolume = 0.3;
+          const fadeStep = 50;
+          const volumeIncrement = targetVolume / (fadeDuration / fadeStep);
+
+          const fadeInterval = setInterval(() => {
+            if (audio.volume < targetVolume) {
+              audio.volume = Math.min(targetVolume, audio.volume + volumeIncrement);
+            } else {
+              clearInterval(fadeInterval);
+            }
+          }, fadeStep);
         }).catch((err) => {
           console.warn('Autoplay prevented, waiting for user action:', err);
         });
       }
     };
 
-    // Try immediate playback (for browsers that allow autoplay)
+    // Try immediate playback
     startAudio();
 
-    // Trigger on user interaction if autoplay is blocked
+    // Listen for user interaction (autoplay unlock)
     const events = ['click', 'touchstart', 'keydown'];
     events.forEach((event) => {
       document.addEventListener(event, startAudio, { once: true });
     });
 
     return () => {
-      events.forEach((event) => {
-        document.removeEventListener(event, startAudio);
-      });
+      events.forEach((event) => document.removeEventListener(event, startAudio));
     };
   }, [audioStarted]);
 
-  // Determine which page to render
+  // Page rendering
   const renderPage = () => {
     switch (currentPath) {
       case '/agents':
@@ -107,7 +119,7 @@ function App() {
         style={{ display: 'none' }}
       />
 
-      {/* Optional dark overlay */}
+      {/* Overlay for dark ambience */}
       <div
         className="fixed inset-0"
         style={{
