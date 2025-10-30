@@ -106,4 +106,11 @@ export const agents: Agent[] = [
     status: 'verified',
     website: 'https://www.facebook.com/share/17CsiNgdn5/?mibextid=wwXIfr',
   },
+  {
+    id: '21',
+    name: 'Garcia Roy',
+    verificationId: 'SB-252610',
+    status: 'verified',
+    website: 'https://www.facebook.com/share/17FYHAhLfH/?mibextid=wwXIfr',
+  },
 ];
